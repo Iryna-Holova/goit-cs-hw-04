@@ -1,5 +1,7 @@
 # Computer Systems hw-04
 
+## Text File Processing
+
 This repository contains Python scripts for parallel processing and analysis of text files to search for specified keywords. The program is designed to operate in two modes: **multithreading** and **multiprocessing**.
 
 1. [Multithreaded Text File Processing](threads.py): This script implements the multithreaded approach using the threading module. It splits the list of files among different threads, with each thread searching for specified keywords in its assigned files.
