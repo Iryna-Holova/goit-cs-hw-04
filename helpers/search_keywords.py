@@ -18,9 +18,12 @@ def search_keywords_in_files(
     """
     results = {keyword: [] for keyword in keywords}
     for file_path in files:
-        with open(file_path, 'r') as file:
-            content = file.read()
-            for keyword in keywords:
-                if keyword in content:
-                    results[keyword].append(os.path.basename(file_path))
+        try:
+            with open(file_path, 'r') as file:
+                content = file.read()
+                for keyword in keywords:
+                    if keyword in content:
+                        results[keyword].append(os.path.basename(file_path))
+        except Exception as e:
+            print(f"Error processing file {file_path}: {e}")
     result_queue.put(results)
